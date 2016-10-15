@@ -6,13 +6,15 @@
 	font-size: 0;
 	-ms-flex-wrap: wrap;
 	-ms-flex-direction: column;
-	-webkit-flex-flow: row wrap;
-	flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	    flex-flow: row wrap;
 /*
 	display: -ms-flexbox;
 	display: -webkit-box;
 	border: 1px solid red;
 */
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 }
 
@@ -20,7 +22,8 @@
 {
 	s divs divs divs divs div-webkit-box-flex: auto;
 	-ms-flex: auto;
-	flex: auto;
+	-webkit-box-flex: 1;
+	        flex: auto;
 	width: 0;
 	margin: .5vw;
 }
@@ -33,6 +36,8 @@
 
 .items div.a
 {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	position: absolute;
 	color: black;
@@ -107,10 +112,12 @@ section.innersection:hover
 @media (max-width : 800px)
 {
 	#block1{
-		flex-basis : 100%;
+		-ms-flex-preferred-size : 100%;
+		    flex-basis : 100%;
 	}
 	#block2, #block3, #block4, #block5{
-		flex-basis : 50%;
+		-ms-flex-preferred-size : 50%;
+		    flex-basis : 50%;
 	}
 }
 
@@ -118,7 +125,8 @@ section.innersection:hover
 {
 	#block1,#block2,#block3,#block4,#block5
 	{
-		flex-basis : 100%;
+		-ms-flex-preferred-size : 100%;
+		    flex-basis : 100%;
 	}
 }
 
@@ -126,31 +134,41 @@ section.innersection:hover
 #block1
 {
 
-	flex-basis : 25%;
+	-ms-flex-preferred-size : 25%;
+
+	    flex-basis : 25%;
 }
 
 #block2
 {
 
-	flex-basis : 25%;
+	-ms-flex-preferred-size : 25%;
+
+	    flex-basis : 25%;
 }
 
 #block3
 {
 
-	flex-basis : 25%;
+	-ms-flex-preferred-size : 25%;
+
+	    flex-basis : 25%;
 }
 
 #block4
 {
 
-	flex-basis : 25%;
+	-ms-flex-preferred-size : 25%;
+
+	    flex-basis : 25%;
 }
 
 #block5
 {
 
-	flex-basis : 33.33%;
+	-ms-flex-preferred-size : 33.33%;
+
+	    flex-basis : 33.33%;
 }
 
 p.content
@@ -159,6 +177,7 @@ p.content
   display: block;
   margin-bottom: 15px;
 */
+  font-size: 19.2px;
   font-size: 1.2rem;
 /*
   line-height: 1.4em;
@@ -218,9 +237,16 @@ p.content
 	background: black;
 	color: white;
 	border: 10px solid white;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	height: 200px;
 	resize: vertical;
 	overflow: auto;
@@ -231,4 +257,5 @@ p.content
 	margin: 0;
 	padding: 20px;
 }
+
 
